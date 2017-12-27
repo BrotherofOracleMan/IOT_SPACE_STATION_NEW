@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style type="text/css">
+		.side-nav {
+			width: 25%;
+			top: 0;
+			bottom: 0;
+			z-index: 4;
+			background-color: black;
+			/*
+			* make the sidebar bkgd color dark
+			*/
+			
+		}
+		.side-nav li>a {
+			color: white;
+		}
+		.side-nav li>a>i, .side-nav li>a>[class^="mdi-"], .side-nav li>a li>a>[class*="mdi-"], .side-nav li>a>i.material-icons {
+			color: rgba(255, 255, 255, 1);
+		}
+		#body {
+			position: absolute;
+			width: 75%;
+			height: 100%;
+			top: 0;
+			left: 25%;
+			bottom: 0;
+			right: 0;
+		}
+		#quadrants {	/*flex-container*/
+			height: 80%;
+			width: 80%;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto;
+			grid-column-gap: 2.5%;
+  			grid-row-gap: 2.5%;
+  			margin-left: auto;
+  			margin-right: auto;
+		}
+		.quadrant {
+		}
+	</style>
+</head>
+<body>
+<ul id="slide-out" class="side-nav fixed">
+	<li><a href="home.html" class="waves-effect">Space Station</a></li>
+	<li><div class="divider"></div></li>
+	<li><a href="greenhouse.html"><i class="material-icons">local_florist</i>Greenhouse</a></li>
+	<li><a href="#!"><i class="material-icons">home</i>Spacehouse</a></li>
+   <li><a href="#!"><i class="material-icons">wb_sunny</i>Weather</a></li>
+   <li><div class="divider"></div></li>
+   <li><a href="#!"><i class="material-icons">settings</i>Settings</a></li>
+</ul>
+<div id="body">
+	<div id="quadrants">
+				<div class="card quadrant" id="quadrant-1">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="http://materializecss.com/images/office.jpg">
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+				      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+
+				      <!-- *buttons - water / drain 
+				      	   *bkgd - use color range to display seriousness of soil humidity / temp / moisture / etc (buttons to swithc)-->
+				    </div>
+				</div>
+				<div class="card quadrant" id="quadrant-2">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="http://materializecss.com/images/office.jpg">
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+				      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+				    </div>
+				</div>
+				<div class="card quadrant" id="quadrant-3">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="http://materializecss.com/images/office.jpg">
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+				      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+				    </div>
+				</div>
+				<div class="card quadrant" id="quadrant-4">
+				    <div class="card-image waves-effect waves-block waves-light">
+				      <img class="activator" src="http://materializecss.com/images/office.jpg">
+				    </div>
+				    <div class="card-reveal">
+				      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+				      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+				    </div>
+				</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+</html>

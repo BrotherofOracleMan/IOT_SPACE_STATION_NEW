@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greenhouse</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style type="text/css">
+		body {
+			overflow: hidden;
+		}
+		.side-nav {
+			width: 25%;
+			top: 0;
+			bottom: 0;
+			z-index: 4;
+			background-color: black;
+			/*
+			* make the sidebar bkgd color dark
+			*/
+			
+		}
+		.side-nav li>a {
+			color: white;
+		}
+		.side-nav li>a>i, .side-nav li>a>[class^="mdi-"], .side-nav li>a li>a>[class*="mdi-"], .side-nav li>a>i.material-icons {
+			color: rgba(255, 255, 255, 1);
+		}
+		#body {
+			position: absolute;
+			width: 75%;
+			height: 100%;
+			top: 0;
+			left: 25%;
+			bottom: 0;
+			right: 0;
+			color: white;
+			padding: 10px;
+			text-align: center;
+		}
+		.row {
+			margin-bottom: 0px;
+		}
+		.card-panel {
+			padding: 10px;
+		}
+		#buttons {
+			color: rgba(0, 0, 0, 0.54);
+			font-size: 48px;
+		}
+	</style>
+</head>
+<body>
+
+<!-- navbar -->
+<ul id="slide-out" class="side-nav fixed">
+	<li><a href="home.html" class="waves-effect">Space Station</a></li>
+	<li><div class="divider"></div></li>
+	<li><a href="greenhouse.html"><i class="material-icons">local_florist</i>Greenhouse</a></li>
+	<li><a href="#!"><i class="material-icons">home</i>Spacehouse</a></li>
+   <li><a href="#!"><i class="material-icons">wb_sunny</i>Weather</a></li>
+   <li><div class="divider"></div></li>
+   <li><a href="#!"><i class="material-icons">settings</i>Settings</a></li>
+</ul>
+
+<div id="body">
+	<!-- warning
+
+	current data - # only
+		soil moisture
+		soil temperature
+		soil humidity
+	buttons for soil -->
+
+	<div id="warnings" class="card-panel" style="background-color: #D50000; width: 100%; padding: 10px">
+		<div class="warning">
+			<i class="material-icons" style="display: inline-flex;">warning</i>
+			<h5 style="display: inline-flex;">Drain the soil!</h5>
+		</div>
+		<!-- generated in JS -->
+	</div>
+
+	<div id="current-data" class="row">
+		<div class="col s4 data-card">
+			<div class="card-panel" style="background-color: #64DD17; margin-bottom: 0px">
+				<h5>Soil Moisture</h5>
+				<h1 style="display: inline-block;">80.1</h1><p style="display: inline-block;">%</p>
+			</div>
+			<div class="card-panel" style="background-color: #CCFF90; margin-top: 0px">
+				<!-- carousel w/ graph of past week -->
+				<canvas id="soil-moisture" class="gauge"></canvas>
+			</div>
+		</div>
+		<div class="col s4 data-card">
+			<div class="card-panel" style="background-color: #FFD600; margin-bottom: 0px">
+				<h5>Soil Temperature</h5>
+				<h1 style="display: inline-block;">16.4</h1><p style="display: inline-block;">°C</p>
+			</div>
+			<div class="card-panel" style="background-color: #FFFF8D; margin-top: 0px">
+				<!-- carousel w/ graph of past week -->
+				<canvas id="soil-temperature" class="gauge"></canvas>
+			</div>
+		</div>
+		<div class="col s4 data-card">
+			<div class="card-panel" style="background-color: #D50000; margin-bottom: 0px">
+				<h5>Humidity</h5>
+				<h1 style="display: inline-block;">89</h1><p style="display: inline-block;">%</p>
+			</div>
+			<div class="card-panel" style="background-color: #FF8A80; margin-top: 0px">
+				<!-- carousel w/ graph of past week -->
+				<!-- carousel w/ graph of past week -->
+				<canvas id="humidity" class="gauge"></canvas>
+			</div>
+		</div>
+	</div>
+
+	<div id="buttons">
+		<div id="fan" style="display: inline-block;">
+			<i class="material-icons" style="display: inline-block;">toys</i>
+			<div class="switch" style="display: inline-block;">
+			    <label>
+			      Off
+			      <input type="checkbox">
+			      <span class="lever"></span>
+			      On
+			    </label>
+			</div>
+		</div>
+		<div id="water" style="display: inline-block;">
+			<svg style="width:24px;height:24px; display: inline-block;" viewBox="0 0 24 24">
+			    <path fill="rgba(0, 0, 0, 0.54)" d="M12,20A6,6 0 0,1 6,14C6,10 12,3.25 12,3.25C12,3.25 18,10 18,14A6,6 0 0,1 12,20Z" />
+			</svg>
+			<div class="switch" style="display: inline-block;">
+			    <label>
+			      Off
+			      <input type="checkbox">
+			      <span class="lever"></span>
+			      On
+			    </label>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div id="soil-values" style="display: block; margin: 0 auto;">
+	</div>
+
+	<div style="display: block; margin: 0 auto;">
+		<div id="soil-moisture"></div>
+		<div id="soil-temperature"></div>
+		<div id="soil-humidity"></div>
+	</div> -->
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
+<script type="text/javascript" src="greenhouse.js"></script>
+
+</body>
+</html>
