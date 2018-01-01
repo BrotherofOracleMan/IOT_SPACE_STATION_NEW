@@ -1,0 +1,29 @@
+body {
+  overflow: hidden;
+  position: relative;
+}
+.side-nav {
+  width: 20%;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+  background-color: black;
+}
+.side-nav li>a {
+  color: white;
+}
+.side-nav li>a>i, .side-nav li>a>[class^="mdi-"], .side-nav li>a li>a>[class*="mdi-"], .side-nav li>a>i.material-icons {
+  color: rgba(255, 255, 255, 1);
+}
+#body {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  top: 0;
+  left: 20%;
+  bottom: 0;
+  right: 0;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}

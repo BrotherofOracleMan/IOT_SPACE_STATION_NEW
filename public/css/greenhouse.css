@@ -1,0 +1,10 @@
+.row {
+  margin-bottom: 0px;
+}
+.card-panel {
+  padding: 10px;
+}
+#buttons {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 48px;
+}
