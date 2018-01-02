@@ -16,7 +16,7 @@ function emit_led_value(){
 }
 socket.on('photoresistor_value',function(valueobj){
   console.log("Event called")
-  $('#changing_value').text(valueobj.value.toString());
+  $('#changing_value').text(String(valueobj.photoresistor_value));
 });
 
 $('#green').click(function(){

@@ -53,9 +53,15 @@ client.on('message',(topic,message) => {
 
 //handle the events from the front end here
 io.on('connection', (socket) => {
+  setInterval(function(){
+    socket.emit('photoresistor_value',{
+    photoresistor_value:photoresistor_value
+  });
+},500);
  socket.on('led_states',function(led_states){
    console.log("change_led_state");
-   if(led_states.green == 1 && connected){
+   console.log(led_states);
+   if(led_states.green == 1){
      client.publish('slavenode1/led/led_green','true');
      console.log("Green Led emit");
    }
@@ -63,7 +69,7 @@ io.on('connection', (socket) => {
      client.publish('slavenode1/led/led_green','false');
      console.log('green off');
    }
-   if(led_states.red == 1 && connected){
+   if(led_states.red == 1){
      console.log('Red led emit');
      client.publish('slavenode1/led/led_red','true');
    }
@@ -71,7 +77,7 @@ io.on('connection', (socket) => {
      console.log('Red off')
      client.publish('slavenode1/led/led_red','false');
    }
-   if(led_states.yellow == 1 && connected){
+   if(led_states.yellow == 1){
      client.publish('slavenode1/led/led_yellow','true');
      console.log('Yellow led emit');
    }
@@ -92,10 +98,18 @@ client.on('close',()=>{
 
 function handle_photo_resistor_value(message){
   photoresistor_value = parseInt(message);
+  console.log(photoresistor_value);
   photoresistor_value_change = true;
 }
 
 function OnConnect(){
     connected = true;
     console.log('slavenode1 is connected');
+}
+function SendPhotoResistorData()
+{
+let shouldCancel = false;
+ if (!shouldCancel) {
+   setTimeout(thingToRepeat, 1000);
+ }
 }
