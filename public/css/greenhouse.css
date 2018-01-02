@@ -1,9 +1,19 @@
 .row {
   margin-bottom: 0px;
 }
+
 .card-panel {
   padding: 10px;
 }
+
+.carousel {
+  height: 100%;
+}
+
+.carousel.carousel-slider .carousel-item {
+  min-height: 150px;
+}
+
 #buttons {
   color: rgba(0, 0, 0, 0.54);
   font-size: 48px;

@@ -88,6 +88,11 @@ SOFTWARE.
 // 	chart.draw(humidity, options);
 // }
 
+//carousels
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
+$('.carousel.carousel-slider').carousel({fullWidth: true});
 
 //angular gauges
 var optsMoisture = {
@@ -98,7 +103,7 @@ var optsMoisture = {
     length: 0.8, // // Relative to gauge radius
     strokeWidth: 0.020, // The thickness
     color: '#fff' // Fill color
-  }, 
+  },
   limitMax: false,     // If false, max value increases automatically if value > maxValue
   limitMin: false,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
@@ -111,8 +116,8 @@ var optsMoisture = {
 	// fractionDigits: 1  // Optional: Numerical precision. 0=round off.
  //  },
   staticZones: [
-   {strokeStyle: "#D50000", min: 0, max: 33}, 
-   {strokeStyle: "#FFDD00", min: 33, max: 67}, 
+   {strokeStyle: "#D50000", min: 0, max: 33},
+   {strokeStyle: "#FFDD00", min: 33, max: 67},
    {strokeStyle: "#64DD17", min: 67, max: 100}
   ],
   highDpiSupport: true     // High resolution support
@@ -137,7 +142,7 @@ var optsTemp = {
     length: 0.8, // // Relative to gauge radius
     strokeWidth: 0.020, // The thickness
     color: '#fff' // Fill color
-  }, 
+  },
   limitMax: false,     // If false, max value increases automatically if value > maxValue
   limitMin: false,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
@@ -145,8 +150,8 @@ var optsTemp = {
   strokeColor: '#E0E0E0',  // to see which ones work best for you
   generateGradient: true,
   staticZones: [
-   {strokeStyle: "#D50000", min: 0, max: 10}, 
-   {strokeStyle: "#FFDD00", min: 10, max: 20}, 
+   {strokeStyle: "#D50000", min: 0, max: 10},
+   {strokeStyle: "#FFDD00", min: 10, max: 20},
    {strokeStyle: "#64DD17", min: 20, max: 30}
   ],
   highDpiSupport: true     // High resolution support
@@ -172,7 +177,7 @@ var optsHumid = {
     length: 0.8, // // Relative to gauge radius
     strokeWidth: 0.020, // The thickness
     color: '#fff' // Fill color
-  }, 
+  },
   limitMax: false,     // If false, max value increases automatically if value > maxValue
   limitMin: false,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
@@ -180,8 +185,8 @@ var optsHumid = {
   strokeColor: '#E0E0E0',  // to see which ones work best for you
   generateGradient: true,
   staticZones: [
-   {strokeStyle: "#64DD17", min: 0, max: 33}, 
-   {strokeStyle: "#FFDD00", min: 33, max: 67}, 
+   {strokeStyle: "#64DD17", min: 0, max: 33},
+   {strokeStyle: "#FFDD00", min: 33, max: 67},
    {strokeStyle: "#D50000", min: 67, max: 100}
   ],
   highDpiSupport: true     // High resolution support
@@ -197,5 +202,4 @@ humidGauge.set(89); // set actual value - do this programatically later
 targetHumid.style.width = '100%';
 targetHumid.style.height = '100%';
 
-
-//change style of dashboard based on current greenhouse values (bkgd of panel)
+//change style of dashboard based on current greenhouse values (bkgd of panel) programmatically

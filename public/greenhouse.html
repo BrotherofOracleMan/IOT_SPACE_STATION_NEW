@@ -44,32 +44,49 @@
 				<h1 style="display: inline-block;">80.1</h1><p style="display: inline-block;">%</p>
 			</div>
 			<div class="card-panel" style="background-color: #CCFF90; margin-top: 0px">
-				<!-- carousel w/ graph of past week -->
-				<canvas id="soil-moisture" class="gauge"></canvas>
+					<div class="carousel carousel-slider center" data-indicators="true">
+				    <div class="carousel-item" href="#one!">
+				      <canvas id="soil-moisture" class="gauge"></canvas>
+				    </div>
+				    <div class="carousel-item" href="#two!">
+							<!-- graph of past day -->
+				    </div>
+				  </div>
 			</div>
 		</div>
-		<div class="col s4 data-card">
-			<div class="card-panel" style="background-color: #FFD600; margin-bottom: 0px">
-				<h5>Soil Temperature</h5>
-				<h1 style="display: inline-block;">16.4</h1><p style="display: inline-block;">°C</p>
+			<div class="col s4 data-card">
+				<div class="card-panel" style="background-color: #FFD600; margin-bottom: 0px">
+					<h5>Soil Temperature</h5>
+					<h1 style="display: inline-block;">16.4</h1><p style="display: inline-block;">°C</p>
+				</div>
+				<div class="card-panel" style="background-color: #FFFF8D; margin-top: 0px">
+					<div class="carousel carousel-slider center" data-indicators="true">
+				    <div class="carousel-item" href="#one!">
+				      <canvas id="soil-temperature" class="gauge"></canvas>
+				    </div>
+				    <div class="carousel-item" href="#two!">
+							<!-- graph of past day -->
+				    </div>
+				  </div>
+				</div>
 			</div>
-			<div class="card-panel" style="background-color: #FFFF8D; margin-top: 0px">
-				<!-- carousel w/ graph of past week -->
-				<canvas id="soil-temperature" class="gauge"></canvas>
+			<div class="col s4 data-card">
+				<div class="card-panel" style="background-color: #D50000; margin-bottom: 0px">
+					<h5>Humidity</h5>
+					<h1 style="display: inline-block;">89</h1><p style="display: inline-block;">%</p>
+				</div>
+				<div class="card-panel" style="background-color: #FF8A80; margin-top: 0px">
+					<div class="carousel carousel-slider center" data-indicators="true">
+						<div class="carousel-item" href="#one!">
+							<canvas id="humidity" class="gauge"></canvas>
+						</div>
+						<div class="carousel-item" href="#two!">
+							<!-- graph of past day -->
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="col s4 data-card">
-			<div class="card-panel" style="background-color: #D50000; margin-bottom: 0px">
-				<h5>Humidity</h5>
-				<h1 style="display: inline-block;">89</h1><p style="display: inline-block;">%</p>
-			</div>
-			<div class="card-panel" style="background-color: #FF8A80; margin-top: 0px">
-				<!-- carousel w/ graph of past week -->
-				<!-- carousel w/ graph of past week -->
-				<canvas id="humidity" class="gauge"></canvas>
-			</div>
-		</div>
-	</div>
 
 	<div id="buttons">
 		<div id="fan" style="display: inline-block;">
@@ -108,6 +125,8 @@
 	</div> -->
 </div>
 
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>
 <script type="text/javascript" src="js/greenhouse.js"></script>
