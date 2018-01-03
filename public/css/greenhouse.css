@@ -11,10 +11,17 @@
 }
 
 .carousel.carousel-slider .carousel-item {
-  min-height: 150px;
+  min-height: 35vh;
+}
+
+.indicator-item {
+  position: relative;
+  top: 5vh;
 }
 
 #buttons {
+  position: relative;
+  bottom: 5vh;
   color: rgba(0, 0, 0, 0.54);
   font-size: 48px;
 }

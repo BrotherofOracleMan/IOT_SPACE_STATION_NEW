@@ -46,10 +46,11 @@
 			<div class="card-panel" style="background-color: #CCFF90; margin-top: 0px">
 					<div class="carousel carousel-slider center" data-indicators="true">
 				    <div class="carousel-item" href="#one!">
-				      <canvas id="soil-moisture" class="gauge"></canvas>
+				      <canvas id="soil-moisture-gauge" class="gauge"></canvas>
 				    </div>
 				    <div class="carousel-item" href="#two!">
 							<!-- graph of past day -->
+							<div id="soil-moisture-chart" class="chart"></div>
 				    </div>
 				  </div>
 			</div>
@@ -62,9 +63,10 @@
 				<div class="card-panel" style="background-color: #FFFF8D; margin-top: 0px">
 					<div class="carousel carousel-slider center" data-indicators="true">
 				    <div class="carousel-item" href="#one!">
-				      <canvas id="soil-temperature" class="gauge"></canvas>
+				      <canvas id="soil-temperature-gauge" class="gauge"></canvas>
 				    </div>
 				    <div class="carousel-item" href="#two!">
+							<div id="soil-temperature-chart" class="chart"></div>
 							<!-- graph of past day -->
 				    </div>
 				  </div>
@@ -78,15 +80,16 @@
 				<div class="card-panel" style="background-color: #FF8A80; margin-top: 0px">
 					<div class="carousel carousel-slider center" data-indicators="true">
 						<div class="carousel-item" href="#one!">
-							<canvas id="humidity" class="gauge"></canvas>
+							<canvas id="humidity-gauge" class="gauge"></canvas>
 						</div>
 						<div class="carousel-item" href="#two!">
+							<div id="humidity-chart" class="chart"></div>
 							<!-- graph of past day -->
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+	</div>
 
 	<div id="buttons">
 		<div id="fan" style="display: inline-block;">
@@ -115,14 +118,6 @@
 		</div>
 	</div>
 
-	<!-- <div id="soil-values" style="display: block; margin: 0 auto;">
-	</div>
-
-	<div style="display: block; margin: 0 auto;">
-		<div id="soil-moisture"></div>
-		<div id="soil-temperature"></div>
-		<div id="soil-humidity"></div>
-	</div> -->
 </div>
 
 <script src="js/libs/jquery-3.2.1.min.js"></script>
