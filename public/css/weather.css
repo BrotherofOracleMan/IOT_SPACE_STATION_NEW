@@ -5,10 +5,6 @@
   padding: 10px;
 }
 
-.card-panel div {
-  flex: 1;
-}
-
 #notifications {
   height: 10vh;
   background-color: #fafafa;
@@ -24,24 +20,57 @@
   background-color: #ffd600;
 }
 
+#stats-left {
+  flex: 1;
+}
+
 #stats-left img {
-  height: 30vh;
+  height: 25vh;
 }
 
-#air-temperature {
-  font-size: 6rem;
-  margin: 0;
+#stats-mid-left {
+  flex: 1;
 }
 
-#stats-mid p {
+#stats-mid-left p {
   display: inline-block;
 }
 
+#air-temperature {
+  font-size: 8rem;
+  margin: 0;
+}
+
 #celsius {
-  font-size: 2em;
+  font-size: 2.5em;
   position: relative;
-  right: 1vw;
-  bottom: 7vh;
+  right: 1.5vw;
+  bottom: 10.5vh;
+}
+
+#stats-mid-right {
+  margin: auto;
+  width: 50%;
+  text-align: left;
+  flex: 1;
+}
+
+#stats-mid-right div p {
+  text-align: left;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+#stats-right {
+  flex: 1.5;
+}
+
+#pressure-gauge {
+  position: relative;
+  bottom: 7.5vh;
+  left: 3vw;
 }
 
 #graphs {

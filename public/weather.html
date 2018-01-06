@@ -6,6 +6,18 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/weather.css">
+	<link rel="stylesheet" href="https://jqwidgets.com/public/jqwidgets/styles/jqx.base.css">
+	<style>
+		.jqx-gauge-label, .jqx-gauge-caption {
+			font-size: 14px;
+			font-family: 'Roboto';
+			color: #ffffff;
+			fill: #ffffff;
+		}
+		.jqx-gauge-caption {
+			font-size: 24px;
+		}
+	</style>
 </head>
 <body>
 
@@ -27,15 +39,20 @@
 			<!-- change depending on temperature programmatically -->
 			<img src="assets/sun.png">
 		</div>
-		<div class="center" id="stats-mid">
-			<div>
-				<p id="air-temperature">21</p>
-				<p id="celsius">°C</p>
-			</div>
-			<div id="pressure-gauge">
-			</div>
+		<div class="center" id="stats-mid-left">
+			<p id="air-temperature">21</p>
+			<p id="celsius">°C</p>
+		</div>
+		<div id="stats-mid-right">
+			<div><p>High:&nbsp</p><p id='air-temp-high'>25°</p></div>
+			<div><p>Low:&nbsp</p><p id='air-temp-low'>10°</p></div>
+			<div><p>Humidity:&nbsp</p><p id="air-humidity">60%</p></div>
+			<div><p id="isRaining">Rain Detected</p></div>
 		</div>
 		<div class="center" id="stats-right">
+			<!-- change value programmatically -->
+			<div id="pressure-gauge" class="gauge">
+			</div>
 		</div>
 	</div>
 	<div class="card-panel" id="graphs">
@@ -43,6 +60,7 @@
 </div>
 
 <script src="js/libs/jquery-3.2.1.min.js"></script>
+<script src="https://jqwidgets.com/public/jqwidgets/jqx-all.js"></script>
 <script type="text/javascript" src="js/weather.js"></script>
 
 </body>
