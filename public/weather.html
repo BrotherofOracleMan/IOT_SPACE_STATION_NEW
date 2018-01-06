@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Spacehouse</title>
+	<title>Weather</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/spacehouse.css">
+  <link rel="stylesheet" href="css/weather.css">
 </head>
 <body>
 
@@ -15,16 +15,35 @@
 	<li><div class="divider"></div></li>
 	<li><a href="greenhouse.html"><i class="material-icons">local_florist</i>Greenhouse</a></li>
 	<li><a href="spacehouse.html"><i class="material-icons">home</i>Spacehouse</a></li>
-   <li><a href="weather.html"><i class="material-icons">wb_sunny</i>Weather</a></li>
+   <li><a href="#!"><i class="material-icons">wb_sunny</i>Weather</a></li>
    <li><div class="divider"></div></li>
    <li><a href="#!"><i class="material-icons">settings</i>Settings</a></li>
 </ul>
 
 <div id="body">
+	<div class="card-panel" id="notifications"></div>
+	<div class="card-panel" id="stats">
+		<div class="center" id="stats-left">
+			<!-- change depending on temperature programmatically -->
+			<img src="assets/sun.png">
+		</div>
+		<div class="center" id="stats-mid">
+			<div>
+				<p id="air-temperature">21</p>
+				<p id="celsius">°C</p>
+			</div>
+			<div id="pressure-gauge">
+			</div>
+		</div>
+		<div class="center" id="stats-right">
+		</div>
+	</div>
+	<div class="card-panel" id="graphs">
+	</div>
 </div>
 
 <script src="js/libs/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/spacehouse.js"></script>
+<script type="text/javascript" src="js/weather.js"></script>
 
 </body>
 </html>

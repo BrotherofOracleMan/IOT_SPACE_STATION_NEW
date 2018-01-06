@@ -1,0 +1,50 @@
+.card-panel {
+  width: 100%;
+  display: inline-flex;
+  margin: .5rem 0 0.5rem 0;
+  padding: 10px;
+}
+
+.card-panel div {
+  flex: 1;
+}
+
+#notifications {
+  height: 10vh;
+  background-color: #fafafa;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+}
+
+#stats {
+  height: 40vh;
+  background-color: #ffd600;
+}
+
+#stats-left img {
+  height: 30vh;
+}
+
+#air-temperature {
+  font-size: 6rem;
+  margin: 0;
+}
+
+#stats-mid p {
+  display: inline-block;
+}
+
+#celsius {
+  font-size: 2em;
+  position: relative;
+  right: 1vw;
+  bottom: 7vh;
+}
+
+#graphs {
+  height: 40vh;
+  background-color: #fafafa;
+}
