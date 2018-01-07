@@ -1,0 +1,25 @@
+#floorplan {
+  z-index: 0;
+}
+
+.bulb {
+  width: 12vh;
+  height: 12vh;
+  z-index: 1;
+  position: absolute;
+}
+
+.bulb1 {
+  top: 17vh;
+  left: 19.1vw;
+}
+
+.bulb2 {
+  top: 17vh;
+  left: 36.5vw;
+}
+
+.bulb3 {
+  top: 53vh;
+  right: 20.5vw;
+}
