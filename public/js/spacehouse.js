@@ -5,6 +5,8 @@ let bulbOn3 = false;
 let roofOn = false;
 let doorOpen = false;
 
+let floorplan = document.getElementById('floorplan');
+
 let bulb1 = document.getElementById('bulb1');
 let bulb2 = document.getElementById('bulb2');
 let bulb3 = document.getElementById('bulb3');
@@ -49,14 +51,23 @@ let roofBtn = document.querySelector('#roof-switch input');
 roofBtn.addEventListener('change', function() {
   if (!roofOn) {
     roof.removeAttribute('hidden');
-    //update text on the side
+    //close roof
   } else {
     roof.setAttribute('hidden', 'true');
-    //update text on the side
+    //move roof away
   }
   roofOn = !roofOn;
 });
 
-roof.addEventListener('click', function() {
-
+door.addEventListener('click', function() {
+  if (!doorOpen) {
+    //change image
+    floorplan.setAttribute('src', 'assets/spacehouse-door-open.png');
+    //open door
+  } else {
+    //change image
+    floorplan.setAttribute('src', 'assets/spacehouse-door-closed.png');
+    //close door
+  }
+  doorOpen = !doorOpen;
 });

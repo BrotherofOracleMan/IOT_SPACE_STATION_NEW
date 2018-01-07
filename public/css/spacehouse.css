@@ -30,6 +30,10 @@
 
 #door {
   position: absolute;
+  width: 40vh;
+  height: 15vh;
+  top: 70vh;
+  right: 14.5vw;
 }
 
 .bulb {
