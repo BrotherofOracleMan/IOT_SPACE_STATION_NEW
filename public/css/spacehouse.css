@@ -1,18 +1,25 @@
-#body {
-  display: flex;
-  top: 10px;
+#floorplan {
+  z-index: 0;
 }
 
-#map {
-  flex: 1.75;
-  height: 90vh;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+.bulb {
+  width: 12vh;
+  height: 12vh;
+  z-index: 1;
+  position: absolute;
 }
 
-#notifications {
-  flex: 1;
-  height: 90vh;
-  margin-left: 0.5rem;
-  padding: 1.0rem;
+.bulb1 {
+  top: 17vh;
+  left: 19.1vw;
+}
+
+.bulb2 {
+  top: 17vh;
+  left: 36.5vw;
+}
+
+.bulb3 {
+  top: 53vh;
+  right: 20.5vw;
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Weather</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/weather.css">
+	<link rel="stylesheet" href="https://jqwidgets.com/public/jqwidgets/styles/jqx.base.css">
+	<style>
+		.jqx-gauge-label, .jqx-gauge-caption {
+			font-size: 14px;
+			font-family: 'Roboto';
+			color: #ffffff;
+			fill: #ffffff;
+		}
+		.jqx-gauge-caption {
+			font-size: 24px;
+		}
+	</style>
+</head>
+<body>
+
+<!-- navbar -->
+<ul id="slide-out" class="side-nav fixed">
+	<li><a href="index.html" class="waves-effect">Space Station</a></li>
+	<li><div class="divider"></div></li>
+	<li><a href="greenhouse.html"><i class="material-icons">local_florist</i>Greenhouse</a></li>
+	<li><a href="spacehouse.html"><i class="material-icons">home</i>Spacehouse</a></li>
+   <li><a href="#!"><i class="material-icons">wb_sunny</i>Weather</a></li>
+   <li><div class="divider"></div></li>
+   <li><a href="#!"><i class="material-icons">settings</i>Settings</a></li>
+</ul>
+
+<div id="body">
+	<div class="card-panel" id="notifications"></div>
+	<div class="card-panel" id="stats" style="background-color: #ffd600">
+		<div class="center" id="stats-left">
+			<!-- change depending on temperature programmatically -->
+			<img src="assets/sun.png">
+		</div>
+		<div class="center" id="stats-mid-left">
+			<p id="air-temperature">21</p>
+			<p id="celsius">°C</p>
+		</div>
+		<div id="stats-mid-right">
+			<div><p>High:&nbsp</p><p id='air-temp-high'>25°</p></div>
+			<div><p>Low:&nbsp</p><p id='air-temp-low'>10°</p></div>
+			<div><p>Humidity:&nbsp</p><p id="air-humidity">60%</p></div>
+			<div><p id="isRaining">Rain Detected</p></div>
+			<div><p>Altitude:&nbsp</p><p id='altitude'>9000m</p></div>
+		</div>
+		<div class="center" id="stats-right">
+			<!-- change value programmatically -->
+			<div id="pressure-gauge" class="gauge">
+			</div>
+		</div>
+	</div>
+	<div class="card-panel" id="graphs">
+		<div id="graphs-past-hour" class="carousel carousel-slider center" data-indicators="true">
+			<div class="carousel-item" href="#one!">
+				<div id="air-temperature-chart-hour" class="chart"></div>
+			</div>
+			<div class="carousel-item" href="#two!">
+				<div id="air-humidity-chart-hour" class="chart"></div>
+			</div>
+			<div class="carousel-item" href="#three!">
+				<div id="air-pressure-chart-hour" class="chart"></div>
+			</div>
+		</div>
+		<div id="graphs-past-day" class="carousel carousel-slider center" data-indicators="true">
+			<div class="carousel-item" href="#one!">
+				<div id="air-temperature-chart-day" class="chart"></div>
+			</div>
+			<div class="carousel-item" href="#two!">
+				<div id="air-humidity-chart-day" class="chart"></div>
+			</div>
+			<div class="carousel-item" href="#three!">
+				<div id="air-pressure-chart-day" class="chart"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script src="https://jqwidgets.com/public/jqwidgets/jqx-all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="js/weather.js"></script>
+
+</body>
+</html>

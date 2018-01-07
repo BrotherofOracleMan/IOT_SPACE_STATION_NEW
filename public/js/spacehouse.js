@@ -1,12 +1,40 @@
-var map = L.map('map', {
-  crs: L.CRS.Simple
+let bulbOn1 = false;
+let bulbOn2 = false;
+let bulbOn3 = false;
+
+let bulb1 = document.getElementById('bulb1');
+let bulb2 = document.getElementById('bulb2');
+let bulb3 = document.getElementById('bulb3');
+
+bulb1.addEventListener('click', function() {
+  if (!bulbOn1) {
+    bulb1.setAttribute('src', 'assets/bulb-lit.png');
+    //light the LED
+  } else {
+    bulb1.setAttribute('src', 'assets/bulb.png');
+    //turn off the LED
+  }
+  bulbOn1 = !bulbOn1;
 });
 
-var bounds = [[0, 0], [500, 500]];
-var image = L.imageOverlay('assets/map.png', bounds).addTo(map);
-map.fitBounds(bounds);
+bulb2.addEventListener('click', function() {
+  if (bulbOn2) {
+    bulb2.setAttribute('src', 'assets/bulb-lit.png');
+    //light the LED
+  } else {
+    bulb2.setAttribute('src', 'assets/bulb.png');
+    //turn off the LED
+  }
+  bulbOn2 = !bulbOn2;
+});
 
-//notification markers
-// var sol = L.latLng([ 145, 175.2 ]);
-// L.marker(sol).addTo(map);
-// map.setView( [70, 120], 1);
+bulb3.addEventListener('click', function() {
+  if (bulbOn3) {
+    bulb3.setAttribute('src', 'assets/bulb-lit.png');
+    //light the LED
+  } else {
+    bulb3.setAttribute('src', 'assets/bulb.png');
+    //turn off the LED
+  }
+  bulbOn3 = !bulbOn3;
+});

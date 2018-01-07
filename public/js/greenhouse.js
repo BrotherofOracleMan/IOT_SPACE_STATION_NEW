@@ -23,71 +23,147 @@ SOFTWARE.
 */
 
 //charts
+var soilTempChart = document.getElementById('soil-temperature-chart');
+var humidityChart = document.getElementById('humidity-chart');
+var soilMoistureChart = document.getElementById('soil-moisture-chart');
 
-// google.charts.load('current', {'packages':['corechart']});
-// google.charts.setOnLoadCallback(drawSoilMoistureChart);
-// google.charts.setOnLoadCallback(drawSoilTemperatureChart);
-// google.charts.setOnLoadCallback(drawSoilHumidityChart);
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawSoilMoistureChart);
+google.charts.setOnLoadCallback(drawSoilTemperatureChart);
+google.charts.setOnLoadCallback(drawSoilHumidityChart);
 
-// //modularize this later
-// function drawSoilMoistureChart() {
-// 	var moisture = new google.visualization.arrayToDataTable([
-// 		['Day', 'Moisture'],
-// 		['1', 80.1],
-// 		['2', 79.2],
-// 		['3', 75.2],
-// 		['4', 82.9],
-// 		['5', 81.8]
-// 	]);
-// 	//instantiate charts
-// 	var options = {
-// 		title:'Soil Moisture',
-// 		curveType: 'function',
-// 		width: window.innerWidth / 3,
-// 		height: window.innerHeight / 2
-// 	};
-// 	var chart = new google.visualization.LineChart(document.getElementById(''));
-// 	chart.draw(moisture, options);
-// }
-// 	function drawSoilTemperatureChart() {
-// 		var temp = new google.visualization.arrayToDataTable([
-// 			['Day', 'Temperature'],
-// 			['1', 24.3],
-// 			['2', 24.0],
-// 			['3', 23.9],
-// 			['4', 24.1],
-// 			['5', 24.2]
-// 		]);
-// 		//instantiate charts
-// 		var options = {
-// 			title:'Soil Temperature',
-// 			curveType: 'function',
-// 			width: window.innerWidth / 3,
-// 			height: window.innerHeight / 2
-// 		};
-// 		var chart = new google.visualization.LineChart(document.getElementById(''));
-// 		chart.draw(temp, options);
-// }
-// function drawSoilHumidityChart() {
-// 	var humidity = new google.visualization.arrayToDataTable([
-// 		['Day', 'Humidity'],
-// 		['1', 89],
-// 		['2', 90],
-// 		['3', 91],
-// 		['4', 88],
-// 		['5', 92]
-// 	]);
-// 	//instantiate charts
-// 	var options = {
-// 		title:'Soil Humidity',
-// 		curveType: 'function',
-// 		width: window.innerWidth / 3,
-// 		height: window.innerHeight / 2
-// 	};
-// 	var chart = new google.visualization.LineChart(document.getElementById(''));
-// 	chart.draw(humidity, options);
-// }
+//modularize this later
+function drawSoilMoistureChart() {
+	var moisture = new google.visualization.arrayToDataTable([
+		['Day', 'Moisture'],
+		['1', 80.1],
+		['2', 79.2],
+		['3', 75.2],
+		['4', 82.9],
+		['5', 81.8]
+	]);
+	//instantiate charts
+	var options = {
+		title:'Soil Moisture',
+		curveType: 'function',
+		width: soilMoistureChart.getAttribute('width'),
+		height: soilMoistureChart.getAttribute('height'),
+		fontName: 'Roboto',
+		fontSize: 12,
+		colors: [soilMoistureChart.parentNode.parentNode.parentNode.previousElementSibling.style.backgroundColor],
+		vAxis: {
+			title: '°C',
+			textStyle: {
+				color: '#757575'
+			},
+			titleTextStyle: {
+				color: '#757575'
+			}
+		},
+		hAxis: {
+			title: 'time (h)',
+			textStyle: {
+				color: '#757575'
+			},
+			titleTextStyle: {
+				color: '#757575'
+			}
+		},
+		backgroundColor: { fill:'transparent' }
+	};
+	var chart = new google.visualization.LineChart(soilMoistureChart);
+	chart.draw(moisture, options);
+}
+function drawSoilTemperatureChart() {
+		var temp = new google.visualization.arrayToDataTable([
+			['Day', 'Temperature'],
+			['1', 24.3],
+			['2', 24.0],
+			['3', 23.9],
+			['4', 21],
+			['5', 16.4]
+		]);
+		//instantiate charts
+		var options = {
+			title:'Soil Temperature',
+			curveType: 'function',
+			width: soilTempChart.getAttribute('width'),
+			height: soilTempChart.getAttribute('height'),
+			fontName: 'Roboto',
+			fontSize: 12,
+			colors: [soilTempChart.parentNode.parentNode.parentNode.previousElementSibling.style.backgroundColor],
+			vAxis: {
+				title: '°C',
+				textStyle: {
+					color: '#757575'
+				},
+				titleTextStyle: {
+					color: '#757575'
+				}
+			},
+			hAxis: {
+				title: 'time (h)',
+				textStyle: {
+					color: '#757575'
+				},
+				titleTextStyle: {
+					color: '#757575'
+				}
+			},
+			backgroundColor: { fill:'transparent' }
+		};
+		// //soilTempChart.parent().width()
+		var chart = new google.visualization.LineChart(soilTempChart);
+		chart.draw(temp, options);
+}
 
+function drawSoilHumidityChart() {
+	var humidity = new google.visualization.arrayToDataTable([
+		['Day', 'Humidity'],
+		['1', 89],
+		['2', 90],
+		['3', 91],
+		['4', 88],
+		['5', 92]
+	]);
+	//instantiate charts
+	var options = {
+		title:'Humidity',
+		curveType: 'function',
+		width: humidityChart.getAttribute('width'),
+		height: humidityChart.getAttribute('height'),
+		fontName: 'Roboto',
+		fontSize: 12,
+		colors: [humidityChart.parentNode.parentNode.parentNode.previousElementSibling.style.backgroundColor],
+		vAxis: {
+			title: '°C',
+			textStyle: {
+				color: '#757575'
+			},
+			titleTextStyle: {
+				color: '#757575'
+			}
+		},
+		hAxis: {
+			title: 'time (h)',
+			textStyle: {
+				color: '#757575'
+			},
+			titleTextStyle: {
+				color: '#757575'
+			}
+		},
+		backgroundColor: { fill:'transparent' }
+	};
+	var chart = new google.visualization.LineChart(humidityChart);
+	chart.draw(humidity, options);
+}
+
+//carousels
+$(document).ready(function(){
+  $('.carousel').carousel();
+});
+$('.carousel.carousel-slider').carousel({fullWidth: true});
 
 //angular gauges
 var optsMoisture = {
@@ -98,7 +174,7 @@ var optsMoisture = {
     length: 0.8, // // Relative to gauge radius
     strokeWidth: 0.020, // The thickness
     color: '#fff' // Fill color
-  }, 
+  },
   limitMax: false,     // If false, max value increases automatically if value > maxValue
   limitMin: false,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
@@ -111,14 +187,14 @@ var optsMoisture = {
 	// fractionDigits: 1  // Optional: Numerical precision. 0=round off.
  //  },
   staticZones: [
-   {strokeStyle: "#D50000", min: 0, max: 33}, 
-   {strokeStyle: "#FFDD00", min: 33, max: 67}, 
+   {strokeStyle: "#D50000", min: 0, max: 33},
+   {strokeStyle: "#FFDD00", min: 33, max: 67},
    {strokeStyle: "#64DD17", min: 67, max: 100}
   ],
   highDpiSupport: true     // High resolution support
 };
 
-var target = document.getElementById('soil-moisture'); // your canvas element
+var target = document.getElementById('soil-moisture-gauge'); // your canvas element
 var moistureGauge = new Gauge(target).setOptions(optsMoisture); // create sexy gauge!
 moistureGauge.maxValue = 100; // set max gauge value
 moistureGauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
@@ -126,7 +202,7 @@ moistureGauge.animationSpeed = 32; // set animation speed (32 is default value)
 moistureGauge.set(80.1); // set actual value - do this programatically later
 
 target.style.width = '100%';
-target.style.height = '100%';
+target.style.height = '70%';
 
 
 var optsTemp = {
@@ -137,7 +213,7 @@ var optsTemp = {
     length: 0.8, // // Relative to gauge radius
     strokeWidth: 0.020, // The thickness
     color: '#fff' // Fill color
-  }, 
+  },
   limitMax: false,     // If false, max value increases automatically if value > maxValue
   limitMin: false,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
@@ -145,14 +221,14 @@ var optsTemp = {
   strokeColor: '#E0E0E0',  // to see which ones work best for you
   generateGradient: true,
   staticZones: [
-   {strokeStyle: "#D50000", min: 0, max: 10}, 
-   {strokeStyle: "#FFDD00", min: 10, max: 20}, 
+   {strokeStyle: "#D50000", min: 0, max: 10},
+   {strokeStyle: "#FFDD00", min: 10, max: 20},
    {strokeStyle: "#64DD17", min: 20, max: 30}
   ],
   highDpiSupport: true     // High resolution support
 };
 
-var targetTemp = document.getElementById('soil-temperature'); // your canvas element
+var targetTemp = document.getElementById('soil-temperature-gauge'); // your canvas element
 var tempGauge = new Gauge(targetTemp).setOptions(optsTemp); // create sexy gauge!
 tempGauge.maxValue = 30; // set max gauge value
 tempGauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
@@ -160,7 +236,7 @@ tempGauge.animationSpeed = 32; // set animation speed (32 is default value)
 tempGauge.set(16.4); // set actual value - do this programatically later
 
 targetTemp.style.width = '100%';
-targetTemp.style.height = '100%';
+targetTemp.style.height = '70%';
 
 
 
@@ -172,7 +248,7 @@ var optsHumid = {
     length: 0.8, // // Relative to gauge radius
     strokeWidth: 0.020, // The thickness
     color: '#fff' // Fill color
-  }, 
+  },
   limitMax: false,     // If false, max value increases automatically if value > maxValue
   limitMin: false,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
@@ -180,14 +256,14 @@ var optsHumid = {
   strokeColor: '#E0E0E0',  // to see which ones work best for you
   generateGradient: true,
   staticZones: [
-   {strokeStyle: "#64DD17", min: 0, max: 33}, 
-   {strokeStyle: "#FFDD00", min: 33, max: 67}, 
+   {strokeStyle: "#64DD17", min: 0, max: 33},
+   {strokeStyle: "#FFDD00", min: 33, max: 67},
    {strokeStyle: "#D50000", min: 67, max: 100}
   ],
   highDpiSupport: true     // High resolution support
 };
 
-var targetHumid = document.getElementById('humidity'); // your canvas element
+var targetHumid = document.getElementById('humidity-gauge'); // your canvas element
 var humidGauge = new Gauge(targetHumid).setOptions(optsHumid); // create sexy gauge!
 humidGauge.maxValue = 100; // set max gauge value
 humidGauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
@@ -195,7 +271,6 @@ humidGauge.animationSpeed = 32; // set animation speed (32 is default value)
 humidGauge.set(89); // set actual value - do this programatically later
 
 targetHumid.style.width = '100%';
-targetHumid.style.height = '100%';
+targetHumid.style.height = '70%';
 
-
-//change style of dashboard based on current greenhouse values (bkgd of panel)
+//change style of dashboard based on current greenhouse values (bkgd of panel) programmatically

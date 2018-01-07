@@ -4,37 +4,32 @@
 	<title>Spacehouse</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
-     integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
-     crossorigin=""/>
-  <link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/spacehouse.css">
 </head>
 <body>
 
 <!-- navbar -->
 <ul id="slide-out" class="side-nav fixed">
-	<li><a href="home.html" class="waves-effect">Space Station</a></li>
+	<li><a href="index.html" class="waves-effect">Space Station</a></li>
 	<li><div class="divider"></div></li>
 	<li><a href="greenhouse.html"><i class="material-icons">local_florist</i>Greenhouse</a></li>
 	<li><a href="spacehouse.html"><i class="material-icons">home</i>Spacehouse</a></li>
-   <li><a href="#!"><i class="material-icons">wb_sunny</i>Weather</a></li>
+   <li><a href="weather.html"><i class="material-icons">wb_sunny</i>Weather</a></li>
    <li><div class="divider"></div></li>
    <li><a href="#!"><i class="material-icons">settings</i>Settings</a></li>
 </ul>
 
 <div id="body">
-  <div id="map"></div>
-  <div id="notifications" class="card #e1f5fe light-blue lighten-5">
-    <span class="card-title">Alert</span>
-    <p>when you click on the leaflet marker, display the corresponding notification in this box</p>
-  </div>
+	<img id="floorplan" src="assets/spacehouse-door-closed.png">
+	<!-- change to door-opened when door opened; need user interface for this -->
+	<img src="assets/bulb.png" id="bulb1" class="bulb bulb1">
+	<img src="assets/bulb.png" id="bulb2" class="bulb bulb2">
+	<img src="assets/bulb.png" id="bulb3" class="bulb bulb3">
 </div>
 
-<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
-  integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
-  crossorigin=""></script>
-<script src="js/spacehouse.js"></script>
+<script src="js/libs/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/spacehouse.js"></script>
 
 </body>
 </html>
