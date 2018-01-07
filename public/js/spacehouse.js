@@ -2,6 +2,9 @@ let bulbOn1 = false;
 let bulbOn2 = false;
 let bulbOn3 = false;
 
+let roofOn = false;
+let doorOpen = false;
+
 let bulb1 = document.getElementById('bulb1');
 let bulb2 = document.getElementById('bulb2');
 let bulb3 = document.getElementById('bulb3');
@@ -18,7 +21,7 @@ bulb1.addEventListener('click', function() {
 });
 
 bulb2.addEventListener('click', function() {
-  if (bulbOn2) {
+  if (!bulbOn2) {
     bulb2.setAttribute('src', 'assets/bulb-lit.png');
     //light the LED
   } else {
@@ -29,7 +32,7 @@ bulb2.addEventListener('click', function() {
 });
 
 bulb3.addEventListener('click', function() {
-  if (bulbOn3) {
+  if (!bulbOn3) {
     bulb3.setAttribute('src', 'assets/bulb-lit.png');
     //light the LED
   } else {
@@ -37,4 +40,23 @@ bulb3.addEventListener('click', function() {
     //turn off the LED
   }
   bulbOn3 = !bulbOn3;
+});
+
+let door = document.getElementById('door');
+let roof = document.getElementById('roof');
+let roofBtn = document.querySelector('#roof-switch input');
+
+roofBtn.addEventListener('change', function() {
+  if (!roofOn) {
+    roof.removeAttribute('hidden');
+    //update text on the side
+  } else {
+    roof.setAttribute('hidden', 'true');
+    //update text on the side
+  }
+  roofOn = !roofOn;
+});
+
+roof.addEventListener('click', function() {
+
 });
