@@ -34,7 +34,7 @@
 
 <div id="body">
 	<div class="card-panel" id="notifications"></div>
-	<div class="card-panel" id="stats">
+	<div class="card-panel" id="stats" style="background-color: #ffd600">
 		<div class="center" id="stats-left">
 			<!-- change depending on temperature programmatically -->
 			<img src="assets/sun.png">
@@ -56,11 +56,37 @@
 		</div>
 	</div>
 	<div class="card-panel" id="graphs">
+		<div id="graphs-past-hour" class="carousel carousel-slider center" data-indicators="true">
+			<div class="carousel-item" href="#one!">
+				<div id="air-temperature-chart-hour" class="chart"></div>
+			</div>
+			<div class="carousel-item" href="#two!">
+				<div id="air-humidity-chart-hour" class="chart"></div>
+			</div>
+			<div class="carousel-item" href="#three!">
+				<div id="air-pressure-chart-hour" class="chart"></div>
+			</div>
+		</div>
+		<div id="graphs-past-day" class="carousel carousel-slider center" data-indicators="true">
+			<div class="carousel-item" href="#one!">
+				<div id="air-temperature-chart-day" class="chart"></div>
+			</div>
+			<div class="carousel-item" href="#two!">
+				<div id="air-humidity-chart-day" class="chart"></div>
+			</div>
+			<div class="carousel-item" href="#three!">
+				<div id="air-pressure-chart-day" class="chart"></div>
+			</div>
+		</div>
+		<div id="altitude-meter"></div>
+
 	</div>
 </div>
 
 <script src="js/libs/jquery-3.2.1.min.js"></script>
 <script src="https://jqwidgets.com/public/jqwidgets/jqx-all.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="js/weather.js"></script>
 
 </body>

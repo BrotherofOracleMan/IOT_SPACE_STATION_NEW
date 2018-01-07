@@ -17,7 +17,6 @@
 
 #stats {
   height: 40vh;
-  background-color: #ffd600;
 }
 
 #stats-left {
@@ -61,6 +60,8 @@
   margin-top: 0;
   margin-bottom: 0;
   display: inline-block;
+  position: relative;
+  left: 1.333vw;
 }
 
 #stats-right {
@@ -75,5 +76,31 @@
 
 #graphs {
   height: 40vh;
-  background-color: #fafafa;
+  background-color: #FFFF8D;
+  display: inline-flex;
+}
+
+.carousel {
+  height: 100%;
+}
+
+.carousel.carousel-slider .carousel-item {
+  min-height: 35vh;
+}
+
+.indicator-item {
+  position: relative;
+  top: 5vh;
+}
+
+#graphs-past-hour {
+  flex: 5;
+}
+
+#graphs-past-day {
+  flex: 5;
+}
+
+#altitude-meter {
+  flex: 2;
 }
