@@ -94,13 +94,9 @@
 }
 
 #graphs-past-hour {
-  flex: 5;
+  flex: 1;
 }
 
 #graphs-past-day {
-  flex: 5;
-}
-
-#altitude-meter {
-  flex: 2;
+  flex: 1;
 }
