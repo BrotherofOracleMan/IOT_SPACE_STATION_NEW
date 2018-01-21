@@ -273,4 +273,63 @@ humidGauge.set(89); // set actual value - do this programatically later
 targetHumid.style.width = '100%';
 targetHumid.style.height = '70%';
 
+//update on/off values - send to server
+let fanBtn = document.querySelector('#fan-switch input');
+let pumpBtn = document.querySelector('#water-switch input');
+
+let fanOn = false;
+let pumpOn = false;
+
+fanBtn.addEventListener('change', function() {
+  if (!fanOn) {
+    //turn fan on
+		console.log('fan on');
+		socket.emit('greenhouse/fan_on');
+  } else {
+    //turn fan off
+		console.log('fan off');
+		socket.emit('greenhouse/fan_off');
+  }
+  fanOn = !fanOn;
+});
+
+pumpBtn.addEventListener('change', function() {
+  if (!pumpOn) {
+    //turn pump on
+		console.log('pump on');
+		socket.emit('greenhouse/pump_on'); // no data emitted - on / off does not need data
+  } else {
+    //turn pump off
+		console.log('pump off');
+		socket.emit('greenhouse/pump_off');
+  }
+  pumpOn = !pumpOn;
+});
+
 //change style of dashboard based on current greenhouse values (bkgd of panel) programmatically
+
+//socket.io
+const socket = io();
+
+// greenhouse/pump_on
+// greenhouse/pump_off
+// greenhouse/moisture
+// greenhouse/fans_off
+// greenhouse/fans_on
+// greenhouse/humidity
+// greenhouse/temperature
+// greenhouse/photoresistor
+
+socket.on('greenhouse/pump_on', onPumpEvent);
+socket.on('greenhouse/pump_off', onPumpEvent);
+socket.on('greenhouse/fans_on', onFanEvent);
+socket.on('greenhouse/fans_off', onFanEvent);
+socket.on('greenhouse/moisture', onMoistureEvent);
+socket.on('greenhouse/humidity', onHumidityEvent);
+socket.on('greenhouse/temperature', onTemperatureEvent);
+socket.on('greenhouse/photoresistor', onPhotoResistorEvent);
+
+//processing events from server.js
+function onPumpEvent(data) {
+	//update pump
+}

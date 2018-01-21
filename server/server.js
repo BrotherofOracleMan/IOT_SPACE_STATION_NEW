@@ -58,34 +58,53 @@ io.on('connection', (socket) => {
     photoresistor_value:photoresistor_value
   });
 },500);
- socket.on('led_states',function(led_states){
-   console.log("change_led_state");
-   console.log(led_states);
-   if(led_states.green == 1){
-     client.publish('slavenode1/led/led_green','true');
-     console.log("Green Led emit");
-   }
-   else{
-     client.publish('slavenode1/led/led_green','false');
-     console.log('green off');
-   }
-   if(led_states.red == 1){
-     console.log('Red led emit');
-     client.publish('slavenode1/led/led_red','true');
-   }
-   else{
-     console.log('Red off')
-     client.publish('slavenode1/led/led_red','false');
-   }
-   if(led_states.yellow == 1){
-     client.publish('slavenode1/led/led_yellow','true');
-     console.log('Yellow led emit');
-   }
-   else{
-     client.publish('slavenode1/led/led_yellow','false');
-     console.log('yellow led off');
-   }
- });
+  socket.on('led_states',function(led_states){
+     console.log("change_led_state");
+     console.log(led_states);
+     if(led_states.green == 1){
+       client.publish('slavenode1/led/led_green','true');
+       console.log("Green Led emit");
+     }
+     else{
+       client.publish('slavenode1/led/led_green','false');
+       console.log('green off');
+     }
+     if(led_states.red == 1){
+       console.log('Red led emit');
+       client.publish('slavenode1/led/led_red','true');
+     }
+     else{
+       console.log('Red off')
+       client.publish('slavenode1/led/led_red','false');
+     }
+     if(led_states.yellow == 1){
+       client.publish('slavenode1/led/led_yellow','true');
+       console.log('Yellow led emit');
+     }
+     else{
+       client.publish('slavenode1/led/led_yellow','false');
+       console.log('yellow led off');
+     }
+  });
+
+  //Greenhouse
+  socket.on('greenhouse/pump_on', () => {
+    //turn pump on
+  });
+  socket.on('greenhouse/pump_off', () => {
+    //turn pump off
+  })
+  socket.on('greenhouse/fans_on', () => {
+    //turn fans on
+  });
+  socket.on('greenhouse/fans_off', () => {
+    //turn fans off
+  });
+  // greenhouse/moisture
+  // greenhouse/humidity
+  // greenhouse/temperature
+  // greenhouse/photoresistor
+
 });
 
 server.listen(port, () => {

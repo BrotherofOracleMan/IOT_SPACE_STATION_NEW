@@ -94,7 +94,7 @@
 	<div id="buttons">
 		<div id="fan" style="display: inline-block;">
 			<i class="material-icons" style="display: inline-block;">toys</i>
-			<div class="switch" style="display: inline-block;">
+			<div id="fan-switch" class="switch" style="display: inline-block;">
 			    <label>
 			      Off
 			      <input type="checkbox">
@@ -107,7 +107,7 @@
 			<svg style="width:24px;height:24px; display: inline-block;" viewBox="0 0 24 24">
 			    <path fill="rgba(0, 0, 0, 0.54)" d="M12,20A6,6 0 0,1 6,14C6,10 12,3.25 12,3.25C12,3.25 18,10 18,14A6,6 0 0,1 12,20Z" />
 			</svg>
-			<div class="switch" style="display: inline-block;">
+			<div id="water-switch" class="switch" style="display: inline-block;">
 			    <label>
 			      Off
 			      <input type="checkbox">
@@ -120,6 +120,7 @@
 
 </div>
 
+<script src="/socket.io/socket.io.js"></script>
 <script src="js/libs/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
